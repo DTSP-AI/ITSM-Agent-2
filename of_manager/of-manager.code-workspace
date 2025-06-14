@@ -1,0 +1,86 @@
+{
+  "folders": [
+    {
+      "name": "OF Manager Root",
+      "path": "."
+    },
+    {
+      "name": "Source Code",
+      "path": "./src"
+    },
+    {
+      "name": "Documentation",
+      "path": "./",
+      "source": {
+        "include": ["*.md", "*.txt"]
+      }
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "./venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/*.pyc": true,
+      "**/node_modules": true,
+      "**/.venv": true,
+      "**/venv": true
+    },
+    "search.exclude": {
+      "**/__pycache__": true,
+      "**/*.pyc": true,
+      "**/node_modules": true,
+      "**/.venv": true,
+      "**/venv": true
+    },
+    "editor.formatOnSave": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.testing.pytestEnabled": true,
+    "docker.defaultRegistryPath": "",
+    "git.enableSmartCommit": true,
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-azuretools.vscode-docker",
+      "ms-vscode.powershell",
+      "github.copilot",
+      "eamodio.gitlens"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start Dev Environment",
+        "type": "shell",
+        "command": "powershell",
+        "args": ["-ExecutionPolicy", "Bypass", "-File", "./setup-dev-env.ps1"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "new"
+        }
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch OF Manager",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/src/main.py",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/src"
+        }
+      }
+    ]
+  }
+}

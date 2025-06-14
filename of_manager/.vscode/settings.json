@@ -1,0 +1,76 @@
+{
+  "python.defaultInterpreterPath": "./venv/Scripts/python.exe",
+  "python.terminal.activateEnvironment": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length=88"],
+  "python.sortImports.args": ["--profile", "black"],
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/node_modules": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.venv": true,
+    "**/venv": true
+  },
+
+  "files.associations": {
+    "*.env": "dotenv",
+    "*.yml": "yaml",
+    "*.yaml": "yaml",
+    "docker-compose*.yml": "dockercompose"
+  },
+
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+
+  "docker.attachShellCommand.linuxContainer": "/bin/bash",
+  "docker.attachShellCommand.windowsContainer": "powershell",
+
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    }
+  },
+
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+
+  "yaml.schemas": {
+    "file:///c%3A/Users/%username%/.vscode/extensions/ms-vscode.vscode-json-1.57.0/schemas/docker-compose.json": "docker-compose*.yml"
+  },
+
+  "markdown.preview.fontSize": 14,
+  "markdown.preview.lineHeight": 1.6,
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#2f3349",
+    "activityBar.foreground": "#e7e7e7",
+    "sideBar.background": "#2f3349"
+  }
+}
